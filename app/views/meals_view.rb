@@ -7,7 +7,7 @@ class MealsView
   end
 
   def ask_user_for(param)
-    puts "Choisis un/une #{param}"
+    puts "#{param}?"
     print ">"
     gets.chomp
   end

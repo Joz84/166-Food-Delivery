@@ -11,7 +11,7 @@ class Customer
     ["id", "name", "address"]
   end
 
-  def row_to_csv
+  def to_csv_row
     [ @id, @name, @address ]
   end
 end

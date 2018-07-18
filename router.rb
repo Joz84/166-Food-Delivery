@@ -70,7 +70,7 @@ class Router
   end
 
   def ask_choice
-    puts "Choisis une action"
+    puts "Choise an action"
     print ">"
     gets.chomp
   end
