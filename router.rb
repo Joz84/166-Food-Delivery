@@ -1,6 +1,7 @@
 class Router
-  def initialize(meals_controller)
+  def initialize(meals_controller, customers_controller)
     @meals_controller = meals_controller
+    @customers_controller = customers_controller
     @running = true
   end
 
@@ -19,6 +20,8 @@ class Router
 
     puts " 1 : Afficher la liste des menus"
     puts " 2 : Ajouter un menu à la liste"
+    puts " 3 : Afficher la liste des customers"
+    puts " 4 : Ajouter un customer"
     puts " 0 : Quit"
   end
 
@@ -32,6 +35,9 @@ class Router
     case action
     when 1 then @meals_controller.list
     when 2 then @meals_controller.add
+    when 3 then @customers_controller.list
+    when 4 then @customers_controller.add
+
     when 0
       puts "The End"
       @running = false
