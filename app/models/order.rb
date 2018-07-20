@@ -28,7 +28,6 @@ class Order
 
   def attributes
     { id: @id,
-      delivered: delivered?,
       customer_name: @customer.name,
       meal_name: @meal.name,
       employee_username: @employee.username }

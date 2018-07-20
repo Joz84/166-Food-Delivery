@@ -24,6 +24,13 @@ class OrdersController
     list_undelivered_orders
   end
 
+  def list_my_orders(employee)
+    orders = @order_repo.undelivered_orders_of(employee)
+    @view.display(orders)
+  end
+
+  private
+
   def ask_user_one_of(elements)
     @view.display(elements)
     model_name = elements.first.class.to_s.downcase

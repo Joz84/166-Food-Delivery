@@ -33,4 +33,8 @@ class OrderRepository < BaseRepository
     @elements.select { |order| !order.delivered? }
   end
 
+  def undelivered_orders_of(employee)
+    @elements.select { |order| !order.delivered? && order.employee == employee }
+  end
+
 end

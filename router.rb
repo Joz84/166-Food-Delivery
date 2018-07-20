@@ -8,13 +8,13 @@ class Router
   end
 
   def run
-    employee = @sessions_controller.sign_in
+    @employee = @sessions_controller.sign_in
     while @running
-      if employee.manager?
+      if @employee.manager?
         display_manager_menu
         action = ask_choice.to_i
         set_manager_action(action)
-      elsif employee.delivery_guy?
+      elsif @employee.delivery_guy?
         display_delivery_guy_menu
         action = ask_choice.to_i
         set_delivery_guy_action(action)
@@ -46,7 +46,6 @@ class Router
     when 4 then @customers_controller.add
     when 5 then @orders_controller.list_undelivered_orders
     when 6 then @orders_controller.add
-
     when 0
       puts "The End"
       @running = false
@@ -65,6 +64,7 @@ class Router
 
   def set_delivery_guy_action(action)
     case action
+    when 1 then @orders_controller.list_my_orders(@employee)
     when 0
       puts "The End"
       @running = false
