@@ -25,6 +25,10 @@ class BaseRepository
     @elements.find{ |element| element.id == id }
   end
 
+  def save
+    save_csv
+  end
+
   private
 
   def save_csv

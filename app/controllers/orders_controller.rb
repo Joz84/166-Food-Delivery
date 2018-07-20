@@ -29,6 +29,14 @@ class OrdersController
     @view.display(orders)
   end
 
+  def mark_as_delivered(employee)
+    orders = @order_repo.undelivered_orders_of(employee)
+    order = ask_user_one_of(orders)
+    order.deliver!
+    @order_repo.save
+    @view.display(orders)
+  end
+
   private
 
   def ask_user_one_of(elements)

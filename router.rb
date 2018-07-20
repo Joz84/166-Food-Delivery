@@ -65,6 +65,7 @@ class Router
   def set_delivery_guy_action(action)
     case action
     when 1 then @orders_controller.list_my_orders(@employee)
+    when 2 then @orders_controller.mark_as_delivered(@employee)
     when 0
       puts "The End"
       @running = false
