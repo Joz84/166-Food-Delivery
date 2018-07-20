@@ -1,10 +1,6 @@
-class SessionsView
-  def ask_user_for(param)
-    puts "#{param}?"
-    print ">"
-    gets.chomp
-  end
+require_relative "base_view"
 
+class SessionsView < BaseView
   def welcome
     puts "welcome"
   end

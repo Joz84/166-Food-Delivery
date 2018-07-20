@@ -10,23 +10,16 @@ class OrderRepository < BaseRepository
   end
 
   def build_element(row)
-
     row[:id] = row[:id].to_i
     row[:delivered] = ( row[:delivered] == "true" )
-    meal_id = row[:meal_id].to_i
-    meal = @meal_repo.find(meal_id)
-
-    employee_id = row[:employee_id].to_i
-    employee = @employee_repo.find(employee_id)
-
-    customer_id = row[:customer_id].to_i
-    customer = @customer_repo.find(customer_id)
-
+    meal = @meal_repo.find(row[:meal_id].to_i)
+    employee = @employee_repo.find(row[:employee_id].to_i)
+    customer = @customer_repo.find(row[:customer_id].to_i)
     order = Order.new(row)
     order.meal = meal
     order.customer = customer
     order.employee = employee
-    return order
+    order
   end
 
   def undelivered_orders

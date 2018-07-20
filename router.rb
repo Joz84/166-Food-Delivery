@@ -33,8 +33,6 @@ class Router
     puts " 4 : Add a customer"
     puts " 5 : List undelivered orders"
     puts " 6 : Add an order"
-    puts " 7 : List employee undelivered orders"
-    puts " 8 : Mark order as done"
     puts " 0 : Quit"
   end
 

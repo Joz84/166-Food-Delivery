@@ -8,7 +8,7 @@ class MealsController
 
   def list
     meals = @meal_repo.all
-    @view.display_all(meals)
+    @view.display(meals)
   end
 
   def add

@@ -34,7 +34,6 @@ class OrdersController
     order = ask_user_one_of(orders)
     order.deliver!
     @order_repo.save
-    @view.display(orders)
   end
 
   private

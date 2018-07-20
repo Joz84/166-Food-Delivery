@@ -1,15 +1,4 @@
-class MealsView
+require_relative "base_view"
 
-  def display_all(meals)
-    meals.each do |meal|
-      puts "#{meal.id} - #{meal.name} : #{meal.price} €"
-    end
-  end
-
-  def ask_user_for(param)
-    puts "#{param}?"
-    print ">"
-    gets.chomp
-  end
-
+class MealsView < BaseView
 end
