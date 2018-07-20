@@ -45,6 +45,8 @@ class Router
     when 3 then @customers_controller.list
     when 4 then @customers_controller.add
     when 5 then @orders_controller.list_undelivered_orders
+    when 6 then @orders_controller.add
+
     when 0
       puts "The End"
       @running = false

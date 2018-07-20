@@ -14,4 +14,8 @@ class Meal
   def to_csv_row
     [@id, @name, @price]
   end
+
+  def attributes
+    { id: @id, name: @name, address: @price }
+  end
 end

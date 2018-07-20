@@ -24,4 +24,8 @@ class Employee
   def to_csv_row
     [ @id, @username, @password, @role ]
   end
+
+  def attributes
+    { id: @id, username: @username }
+  end
 end

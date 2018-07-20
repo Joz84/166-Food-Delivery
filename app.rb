@@ -24,7 +24,7 @@ sessions_controller = SessionsController.new(employee_repo)
 
 orders_file = "data/orders.csv"
 order_repo = OrderRepository.new(orders_file, meal_repo, employee_repo, customer_repo)
-orders_controller = OrdersController.new(order_repo)
+orders_controller = OrdersController.new(order_repo, meal_repo, employee_repo, customer_repo)
 
 
 router = Router.new(meals_controller, customers_controller, sessions_controller, orders_controller)

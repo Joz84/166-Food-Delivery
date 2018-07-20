@@ -14,4 +14,8 @@ class Customer
   def to_csv_row
     [ @id, @name, @address ]
   end
+
+  def attributes
+    { id: @id, name: @name, address: @address }
+  end
 end
